@@ -1,0 +1,16 @@
+
+RewriteOptions inherit
+RewriteEngine On
+
+# Redirect all to https://sneham.care
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.sneham\.care$ [NC]
+RewriteRule ^(.*)$ https://sneham.care/$1 [L,R=301]
+
+# Check if the requested URL is not an existing file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Check if the requested URL without extension exists as an .html file
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.*)$ $1.html [L,QSA]

@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full viewport height */
+  background-color: #FFFADF;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: makes background stay in place on scroll */
+}
+
+
+
+.card-body{
+  background-color:#feecb2;
+}
+
+
+.satsungh-card {
+  /* background: #fff; */
+
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.satsungh-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.satsungh-card .card-title {
+    
+  color: #3D3931; /* Deep brown tone for title */
+}
+
+.satsungh-card .card-text { 
+  text-align: justify;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* fitness  */
+/* .fitness-club-section {
+background-image: url('../images/fit.j'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 60px 20px; 
+  margin-bottom: 50px;
+  text-align: center; 
+
+} */
+
+.fitness-card {
+  /* background: #f9f9f9; */
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fitness-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.fitness-card .card-title {
+  color: #3D3931; /* Green for fitness vibe */
+}
+
+.fitness-card .card-text {
+  text-align: justify;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+
+
+.art-card {
+  /* background: #fff5f8;  */
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.art-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(255, 105, 180, 0.2); /* light artistic glow */
+}
+
+.art-card .card-title {
+  color: #3D3931; /* Bootstrap pink tone */
+}
+
+.art-card .card-text {
+  text-align: justify;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+
+/* .charity-club */
+/* .charity-club-section {
+  background-image: url('../images/charity.png');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  position: relative;
+  margin-bottom: 50px;
+} */
+
+.charity-card {
+  /* background: #f0f8ff;  */
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.charity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.15); /* blue shadow effect */
+}
+
+.charity-card .card-title {
+  color: #3D3931; /* Bootstrap primary blue */
+}
+
+.charity-card .card-text {
+text-align: justify;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+
+.satsungh-card img {
+  height: 350px;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.fitness-card img {
+  height: 350px;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.art-card img {
+  height: 350px;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.charity-card img {
+  height: 350px;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}

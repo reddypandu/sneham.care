@@ -1,0 +1,142 @@
+/* Banner Section */
+.sneham-about-banner {
+  position: relative;
+  min-height: 100vh; /* Changed from height: 100vh to min-height for flexibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow: hidden;
+  z-index: 0;
+  text-align: center;
+}
+
+/* Background Image with opacity layer */
+.sneham-about-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/ABT BANNER.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* opacity: 0.45; */
+  z-index: 1;
+}
+
+/* Overlay Box */
+/* .sneham-banner-overlay {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 50px 40px;
+  border-radius: 16px;
+  max-width: 960px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+} */
+
+/* Heading & Paragraph */
+.sneham-about-content h1 {
+  font-size: 44px;
+  color: #00f2c3;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.sneham-about-content p {
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .sneham-about-banner {
+    min-height: auto;
+    padding: 100px 15px 60px;
+  }
+
+  .sneham-about-content h1 {
+    font-size: 32px;
+  }
+
+  .sneham-about-content p {
+    font-size: 16px;
+  }
+
+  .sneham-banner-overlay {
+    padding: 30px 20px;
+  }
+}
+
+
+
+
+/* ---------- ABOUT SNEHAM SECTION ---------- */
+.about-sneham-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  opacity: 0;
+  transform: translateY(50px); /* start lower */
+  transition: all 0.8s ease;
+}
+
+.about-sneham-section.show {
+  opacity: 1;
+  transform: translateY(0); /* slide to position */
+}
+
+.about-sneham-section h1 {
+  font-size: 2.5rem;
+  color: #4b2e2e;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about-sneham-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-sneham-section li {
+  font-size: 1.125rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  padding-left: 2.2rem;
+  position: relative;
+}
+
+.about-sneham-section li::before {
+  content: "•";
+  color: #4b2e2e;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-sneham-section h1 {
+    font-size: 2rem;
+  }
+  .about-sneham-section li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-sneham-section h1 {
+    font-size: 1.75rem;
+  }
+  .about-sneham-section li {
+    font-size: 0.95rem;
+  }
+}

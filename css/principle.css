@@ -1,0 +1,222 @@
+
+/* value people  */
+.custom-banner-container {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 30px;
+}
+
+.custom-banner-image {
+  width: 65%;
+  height: 400px; /* Professional desktop height */
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Optional hover effect for class */
+.custom-banner-image:hover {
+  transform: scale(1.01);
+}
+
+@media (max-width: 992px) {
+  .custom-banner-container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .custom-banner-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-banner-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .custom-banner-image {
+    height: 200px;
+  }
+}
+
+.value-people-section h2 {
+  font-size: 2.5rem;
+  color: #4a3f35;
+}
+
+.value-card {
+background-color: rgb(255, 250, 223);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.value-card .icon i {
+  display: inline-block;
+}
+/* value people  */
+
+
+/* loyality  */
+.loyalty-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: brown;
+}
+
+.loyalty-subtitle {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+.loyalty-card {
+  /* background: #fff; */
+  border-left: 6px solid #007bff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.loyalty-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 123, 255, 0.2);
+}
+
+.loyalty-text {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+/* loyality  */
+
+/* <!-- Innovation   */
+ .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: bold;
+      color: brown;
+    }
+
+    .card-custom {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .card-custom:hover {
+      transform: translateY(-6px);
+    }
+
+    .card-icon {
+      font-size: 48px;
+      color: #0d6efd;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      color: #222;
+    }
+
+    .card-text {
+      color: #555;
+      font-size: 15px;
+    }
+
+    .banner-center-wrapper {
+  display: flex;
+  justify-content: center;      /* Horizontally center */
+  align-items: center;          /* Vertically center (optional) */
+  padding: 30px 20px;
+  /* background-color: #f5f5f5;     */
+}
+
+.banner-centered-img {
+  width: 65%;
+  max-width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.banner-centered-img:hover {
+  transform: scale(1.02);
+}
+/* <!-- Innovation   */
+/* <!-- Trust  --> */
+.core-value-section {
+  /* background: #f9f9f9; */
+  /* border-top: 4px solid #007bff; */
+  transition: background 0.3s ease;
+}
+
+.core-value-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: brown;
+}
+
+.core-value-text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Optional: On hover, section slightly brightens */
+.core-value-section:hover {
+  /* background-color: #f0f8ff; */
+}
+/* <!-- Trust  --> */
+
+/* responsibility-section  */
+/* Container wrapper */
+.responsibility-section {
+
+  padding: 60px 20px;
+}
+
+/* Card styling */
+.responsibility-card {
+  /* background-color: #ffffff; */
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.responsibility-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* Title styling */
+.responsibility-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: brown; /* Blue tone */
+  margin-bottom: 20px;
+}
+
+/* Text styling */
+.responsibility-text {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}

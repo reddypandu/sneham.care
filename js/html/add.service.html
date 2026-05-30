@@ -1,0 +1,67 @@
+<!-- ======================== add.service.html ======================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Service - SeniorCare</title>
+  <link rel="stylesheet" href="../css/logindb.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/add-service.js"></script>
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <aside class="sidebar">
+      <h2 class="logo">SeniorCare</h2>
+      <ul class="menu">
+        <li><a href="./add.service.html" class="active">Add Service</a></li>
+        <li><a href="./logindashboard.html">Services</a></li>
+        <li><a href="#" id="logout-btn">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <header class="main-header">
+        <h1>Add New Service</h1>
+      </header>
+
+      <section class="form-section">
+       <form id="serviceForm">
+  <label for="serviceImage">Service Image</label>
+  <input type="file" id="serviceImage" accept="image/*" required />
+
+  <label for="serviceName">Service Name</label>
+  <input type="text" id="serviceName" required />
+
+  <label for="serviceDesc">Description</label>
+  <textarea id="serviceDesc" rows="3" required></textarea>
+
+  <label for="gpayNumber">GPay Number</label>
+  <input type="text" id="gpayNumber" required />
+
+  <label for="qrCode">GPay QR Code</label>
+  <input type="file" id="qrCode" accept="image/*" required />
+
+  <label for="serviceStatus">Status</label>
+  <select id="serviceStatus">
+    <option value="Active">Active</option>
+    <option value="Inactive">Inactive</option>
+  </select>
+
+  <button type="submit">Add Service</button>
+</form>
+
+        <div id="successMsg" class="success-message"></div>
+      </section>
+    </main>
+  </div>
+</body>
+<script>
+  document.getElementById("logout-btn").addEventListener("click", function (e) {
+      e.preventDefault();
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("adminEmail");
+      window.location.href = "../index.html";
+    });
+    </script>
+</html

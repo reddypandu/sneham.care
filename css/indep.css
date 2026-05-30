@@ -1,0 +1,15 @@
+.sneham-services .card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.sneham-services .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sneham-services .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}

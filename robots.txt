@@ -1,0 +1,7 @@
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+
+# Sitemap location (important for SEO)
+Sitemap: https://sneham.care/sitemap.xml

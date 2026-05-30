@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Services - SeniorCare</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/logindb.css">
+
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <aside class="sidebar">
+      <h2 class="logo">SeniorCare</h2>
+      <ul class="menu">
+        <li><a href="./add.service.html">Add Service</a></li>
+        <li><a href="./logindashboard.html" class="active">Services</a></li>
+        <li><a href="#" id="logout-btn">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <header class="main-header">
+        <h1>All Services</h1>
+      </header>
+
+      <section class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>QR Code</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="serviceTableBody"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- Edit Popup -->
+  <div id="editPopup" class="popup hidden">
+    <div class="popup-content">
+      <h3>Edit Service</h3>
+      <input id="editName" placeholder="Service Name" />
+      <textarea id="editDesc" placeholder="Description"></textarea>
+      <input id="editGpay" placeholder="GPay Number" />
+      <select id="editStatus">
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+
+      <label>Change Service Image:</label>
+      <input type="file" id="editImage" accept="image/*" />
+      <img id="previewImage" />
+
+      <label>Change QR Code:</label>
+      <input type="file" id="editQR" accept="image/*" />
+      <img id="previewQR" />
+
+      <button onclick="saveEdit()">Save</button>
+      <button onclick="closePopup()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    const serviceBody = document.getElementById("serviceTableBody");
+    let editIndex = -1;
+
+    const renderServices = () => {
+      const services = JSON.parse(localStorage.getItem("services")) || [];
+      serviceBody.innerHTML = "";
+
+      services.forEach((s, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><img src="${s.image}" /></td>
+          <td>${s.name}</td>
+          <td>${s.desc}</td>
+          <td>${s.status}</td>
+          <td><img src="${s.qr}" /></td>
+          <td>
+            <button class="btn btn-edit" onclick="openPopup(${index})">Edit</button>
+            <button class="btn btn-delete" onclick="deleteService(${index})">Delete</button>
+          </td>
+        `;
+        serviceBody.appendChild(row);
+      });
+    };
+
+    function openPopup(index) {
+      const services = JSON.parse(localStorage.getItem("services")) || [];
+      const s = services[index];
+      editIndex = index;
+
+      document.getElementById("editName").value = s.name;
+      document.getElementById("editDesc").value = s.desc;
+      document.getElementById("editGpay").value = s.gpayNumber || "";
+      document.getElementById("editStatus").value = s.status;
+      document.getElementById("previewImage").src = s.image;
+      document.getElementById("previewQR").src = s.qr;
+      document.getElementById("editPopup").classList.remove("hidden");
+    }
+
+    function closePopup() {
+      document.getElementById("editPopup").classList.add("hidden");
+    }
+
+    function saveEdit() {
+      const services = JSON.parse(localStorage.getItem("services")) || [];
+
+      const name = document.getElementById("editName").value.trim();
+      const desc = document.getElementById("editDesc").value.trim();
+      const gpay = document.getElementById("editGpay").value.trim();
+      const status = document.getElementById("editStatus").value;
+      const imgInput = document.getElementById("editImage");
+      const qrInput = document.getElementById("editQR");
+
+      if (!name || !desc || !status) return alert("All fields are required");
+
+      const reader1 = new FileReader();
+      const reader2 = new FileReader();
+
+      reader1.onloadend = () => {
+        if (imgInput.files.length > 0) {
+          services[editIndex].image = reader1.result;
+        }
+        reader2.onloadend = () => {
+          if (qrInput.files.length > 0) {
+            services[editIndex].qr = reader2.result;
+          }
+
+          services[editIndex].name = name;
+          services[editIndex].desc = desc;
+          services[editIndex].gpayNumber = gpay;
+          services[editIndex].status = status;
+
+          localStorage.setItem("services", JSON.stringify(services));
+          closePopup();
+          renderServices();
+        };
+
+        if (qrInput.files.length > 0) {
+          reader2.readAsDataURL(qrInput.files[0]);
+        } else {
+          reader2.onloadend();
+        }
+      };
+
+      if (imgInput.files.length > 0) {
+        reader1.readAsDataURL(imgInput.files[0]);
+      } else {
+        reader1.onloadend();
+      }
+    }
+
+    function deleteService(index) {
+      const services = JSON.parse(localStorage.getItem("services")) || [];
+      if (confirm("Delete this service?")) {
+        services.splice(index, 1);
+        localStorage.setItem("services", JSON.stringify(services));
+        renderServices();
+      }
+    }
+
+    // Initial render
+    renderServices();
+
+    // Logout handler
+    document.getElementById("logout-btn").addEventListener("click", function (e) {
+      e.preventDefault();
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("adminEmail");
+      window.location.href = "../index.html";
+    });
+  </script>
+</body>
+</html>

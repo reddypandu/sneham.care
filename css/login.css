@@ -1,0 +1,133 @@
+/* ========== Reset & Base Styles ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ========== Home Icon Link ========== */
+.home-icon-box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.home-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.home-link i {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.home-link:hover {
+  color: #0056b3;
+}
+
+/* ========== Login Form ========== */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #222;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.login-container input:focus {
+  border-color: #000000;
+  outline: none;
+  background-color: #f9fcff;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #000000;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Error Message */
+.error-message {
+  margin-top: 10px;
+  color: #d9534f;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* OTP Section */
+#otp-section {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .login-container h2 {
+    font-size: 20px;
+  }
+
+  .home-link {
+    font-size: 14px;
+  }
+
+  .login-container input,
+  .login-container button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

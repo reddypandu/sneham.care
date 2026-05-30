@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Available Services - SeniorCare</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/user service.css">
+
+</head>
+<body>
+<div class="home-icon-box">
+  <a href="../index.html" class="home-btn">
+    <i class="bi bi-house-door-fill"></i>
+    <span>Home</span>
+  </a>
+</div>
+
+  <div class="user-service-wrapper">
+    <h2>Available Services</h2>
+    <div id="service-list" class="card-list"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const serviceList = document.getElementById("service-list");
+      const services = JSON.parse(localStorage.getItem("services")) || [];
+
+      const activeServices = services.filter(service => service.status?.toLowerCase() === "active");
+
+      if (activeServices.length === 0) {
+        serviceList.innerHTML = `<p style="text-align:center; color:#666;">No active services available.</p>`;
+        return;
+      }
+
+      activeServices.forEach(service => {
+        const card = document.createElement("div");
+        card.className = "service-card";
+        card.innerHTML = `
+          <img class="service-banner" src="${service.image}" alt="Service Image">
+          <div class="service-card-content">
+            <h3>${service.name}</h3>
+            <p>${service.desc}</p>
+            <div class="service-info">
+              <span class="gpay-number">GPay: ${service.gpayNumber || 'N/A'}</span>
+              <img class="qr-code" src="${service.qr}" alt="QR Code">
+            </div>
+          </div>
+        `;
+        serviceList.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

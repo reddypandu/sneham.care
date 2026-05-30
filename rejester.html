@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Senior Citizen Home Registration</title>
+  <link rel="icon" href="./images/sneham01.png">
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-9SNNHJHK6Y"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-9SNNHJHK6Y'); </script>
+   <meta name="google-site-verification" content="3H1iR6yX9C7_ac3rThg64sYUAjfB4_iDDhPYrgkVKVM" />
+   <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5S2PQS7W');</script>
+<!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="../css/rej.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="home-icon-box">
+  <a href="https://sneham.care/" class="home-link">
+    <i class="bi bi-house-door-fill"></i> Home
+  </a>
+</div>
+
+  <div class="container">
+    <h2>Senior Citizen Registration Form</h2>
+    <form action="#" method="post" novalidate>
+      
+      <div class="field-group">
+        <label for="name">Full Name*</label>
+        <input type="text" id="name" name="name" required>
+        <div class="error-message" id="name-error"></div>
+      </div>
+
+      <div class="field-group">
+        <label for="age">Age*</label>
+        <input type="number" id="age" name="age" min="60" required>
+        <div class="error-message" id="age-error"></div>
+      </div>
+
+      <div class="field-group">
+        <label for="gender">Gender*</label>
+        <select id="gender" name="gender" required>
+          <option value="">-- Select Gender --</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <div class="error-message" id="gender-error"></div>
+      </div>
+
+      <div class="field-group">
+        <label for="address">Home Address*</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+        <div class="error-message" id="address-error"></div>
+      </div>
+
+      <div class="field-group">
+        <label for="medical">Medical Conditions</label>
+        <textarea id="medical" name="medical" rows="3" placeholder="List any known conditions or medications..."></textarea>
+      </div>
+
+        <div class="field-group">
+          <label for="document"> Medical Report (PDF only)*</label>
+          <input type="file" id="document" name="document" accept="application/pdf">
+          <div class="error-message" id="document-error"></div>
+        </div>
+
+      <div class="field-group">
+        <label for="contact">Emergency Contact Number*</label>
+        <input type="tel" id="contact" name="contact" required pattern="[0-9]{10}" placeholder="e.g. 9876543210">
+        <div class="error-message" id="contact-error"></div>
+      </div>
+
+      <div class="field-group">
+        <label for="family">Family Member Contact (optional)</label>
+        <input type="tel" id="family" name="family" placeholder="e.g. 9876543210">
+      </div>
+
+      <button type="submit">Register Now</button>
+    </form>
+  </div>
+  
+<div id="successDialog" class="dialog-box">
+  <div class="dialog-content">
+    <p>🎉 Registration successful!</p>
+    <button id="okBtn">OK</button>
+  </div>
+</div>
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init("6xSfwxo6sBWk3ULAj"); 
+</script>
+
+<!-- Your Form Script -->
+<script src="../js/rej.js"></script>
+
+  <script src="../js/rej.js"></script>
+</body>
+</html>

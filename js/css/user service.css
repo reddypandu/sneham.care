@@ -1,0 +1,204 @@
+/* ======== Global Reset ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ======== Page Wrapper ======== */
+.user-service-wrapper {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #0a3c68;
+  margin-bottom: 35px;
+}
+
+/* ======== Grid Layout ======== */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+/* ======== Service Card ======== */
+.service-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-banner {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.service-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  border-top: 1px solid #f0f0f0;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  color: #0a3c68;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* ======== GPay Info Row ======== */
+.service-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  gap: 20px;
+}
+
+.gpay-number {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.qr-code {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* ======== Responsive Design ======== */
+@media screen and (max-width: 600px) {
+  .user-service-wrapper {
+    max-width: 100%;
+  }
+
+  .card-list {
+    grid-template-columns: 1fr; /* one card per row */
+  }
+
+  .service-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .qr-code {
+    width: 100%;
+    height: auto;
+  }
+}
+/* ======= Wrapper Box ======= */
+.home-icon-box {
+  width: 100%;
+  /* background-color: #eef4fb; */
+  padding: 16px 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* border-bottom: 1px solid #cdd8e8; */
+}
+
+/* ======= Button Styling ======= */
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ======= Icon Style ======= */
+.home-btn i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* ======= Hover Effects ======= */
+.home-btn:hover {
+  background-color: rgb(255, 251, 226);
+  color: black;
+  transform: translateY(-2px);
+}
+
+.home-btn:hover i {
+  transform: scale(1.15);
+}
+
+/* ======= Media Queries ======= */
+@media screen and (max-width: 768px) {
+  .home-icon-box {
+    justify-content: center;
+    padding: 14px 16px;
+  }
+
+  .home-btn {
+    padding: 9px 18px;
+    font-size: 0.95rem;
+    gap: 8px;
+  }
+
+  .home-btn i {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-btn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    gap: 6px;
+  }
+
+  .home-btn i {
+    font-size: 1rem;
+  }
+}
